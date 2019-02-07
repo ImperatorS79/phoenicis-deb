@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+CLASSPATH=/usr/share/phoenicis-playonlinux/*:${CLASSPATH}
+
+java -cp "$CLASSPATH":org.phoenicis.javafx.JavaFXApplication --module-path "/usr/share/openjfx/lib/" --add-modules javafx.controls org.phoenicis.javafx.JavaFXApplication
