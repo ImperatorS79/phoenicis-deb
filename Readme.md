@@ -8,7 +8,7 @@ First clone both Phoenicis and Phoenicis-deb repository
 git clone https://www.github.com/PhoenicisOrg/phoenicis.git
 git clone https://www.github.com/ImperatorS79/phoenicis-deb.git
 ```
-Then you should merge the content of `phoenicis-deb` directory inside `phoenicis` directory. You can then follow the usual way of building phoenicis:
+First delete `phoenicis/phoenicis-dist`directory. Then you should merge the content of `phoenicis-deb` directory inside `phoenicis` directory. You can then follow the usual way of building phoenicis:
 ```
 cd phoenicis/
 export JAVA_HOME=<path_to_java_11_home>
