@@ -16,6 +16,6 @@ mvn clean package
 ```
 The generated .deb is located in `phoenicis/phoenicis-dist/target`
 
-Currently only Ubuntu 18.10 is supported. You can look at the source an provides PR if you want to add other deb based operating system specific configuration.
+Currently only Ubuntu 18.10 is supported. You can look at the source and provides PR if you want to add other deb based operating system specific configuration.
 
-There is also maven plugins for rpm, but I did not take a look at rhem yet. 
+There are also maven plugins for rpm, but I did not take a look at rhem yet. 
