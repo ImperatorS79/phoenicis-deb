@@ -56,7 +56,7 @@ module org.phoenicis.javafx {
     requires org.phoenicis.settings;
     requires org.phoenicis.tools;
     requires org.phoenicis.win32;
-    requires javafx.collections;
+    requires org.phoenicis.javafx.collections;
     requires slf4j.api;
     requires spring.beans;
     requires spring.context;
