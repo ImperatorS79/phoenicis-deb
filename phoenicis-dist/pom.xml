@@ -68,7 +68,7 @@
                             <goal>jdeb</goal>
                         </goals>
                         <configuration>
-                            <deb>${project.build.directory}/phoenicis-playonlinux~${version}~ubuntu18.10.deb</deb>
+                            <deb>${project.build.directory}/phoenicis-playonlinux~${version}~ubuntu19.04.deb</deb>
                             <dataSet>
                                 <data>
                                     <src>${basedir}/src/scripts/copyright</src>
