@@ -2,4 +2,4 @@
 CLASSPATH=/usr/share/phoenicis-playonlinux/*:${CLASSPATH}
 
 export JAVA_HOME=/usr/lib/jvm/java-1.12.0-openjdk-amd64
-java -cp "$CLASSPATH":org.phoenicis.javafx.JavaFXApplication --module-path="/usr/share/phoenicis-playonlinux/" --add-modules javafx.controls,javafx.web org.phoenicis.javafx.JavaFXApplication
+java -cp "$CLASSPATH":org.phoenicis.javafx.JavaFXApplication --add-modules=jdk.crypto.ec,java.base,javafx.base,javafx.web,javafx.media,javafx.graphics,javafx.controls,java.naming,java.sql,java.scripting,jdk.scripting.nashorn,jdk.internal.vm.ci,jdk.internal.vm.compiler,org.graalvm.truffle,jdk.jsobject,jdk.xml.dom --module-path="/usr/share/phoenicis-playonlinux/" -XX:+UnlockExperimentalVMOptions -XX:+EnableJVMCI --upgrade-module-path="/usr/share/phoenicis-playonlinux/compiler.jar" org.phoenicis.javafx.JavaFXApplication
