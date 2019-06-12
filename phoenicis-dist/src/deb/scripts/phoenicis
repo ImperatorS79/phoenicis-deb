@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+CLASSPATH=/usr/share/phoenicis-playonlinux/*:${CLASSPATH}
+
+export JAVA_HOME=/usr/lib/jvm/java-1.12.0-openjdk-amd64
+java -cp "$CLASSPATH":org.phoenicis.javafx.JavaFXApplication --module-path="/usr/share/phoenicis-playonlinux/" --add-modules javafx.controls,javafx.web org.phoenicis.javafx.JavaFXApplication

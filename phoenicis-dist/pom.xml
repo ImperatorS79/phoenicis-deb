@@ -52,7 +52,54 @@
                         </goals>
                         <configuration>
                             <outputDirectory>${project.build.directory}/lib</outputDirectory>
-                            <excludeArtifactIds>javafx-media, javafx-web, javafx-base, javafx-controls, javafx-graphics, commons-logging, xml-apis, xmlParserAPIs, xercesImpl</excludeArtifactIds>
+                            <excludeArtifactIds>bcprov-jdk16, bcmail-jdk16, bcpg-jdk16,commons-logging, xml-apis, xmlParserAPIs, xercesImpl, graal-sdk, truffle-api, compiler</excludeArtifactIds>
+                        </configuration>
+                    </execution>
+                    <!--<execution>
+                        <id>copy-dependencies</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>copy-javafx-dependencies</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${project.build.directory}/lib/javafx</outputDirectory>
+                            <includeArtifactIds>javafx-media, javafx-web, javafx-base, javafx-controls, javafx-graphics</includeArtifactIds>
+                        </configuration>
+                    </execution>-->
+                    <execution>
+                        <id>copy-graal-dependencies</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>copy</goal>
+                        </goals>
+                        <configuration>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>org.graalvm.compiler</groupId>
+                                    <artifactId>compiler</artifactId>
+                                    <version>${graalvm.version}</version>
+                                    <type>jar</type>
+                                    <overWrite>true</overWrite>
+                                    <destFileName>compiler.jar</destFileName>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>org.graalvm.truffle</groupId>
+                                    <artifactId>truffle-api</artifactId>
+                                    <version>${graalvm.version}</version>
+                                    <type>jar</type>
+                                    <overWrite>true</overWrite>
+                                    <destFileName>truffle-api.jar</destFileName>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>org.graalvm.sdk</groupId>
+                                    <artifactId>graal-sdk</artifactId>
+                                    <version>${graalvm.version}</version>
+                                    <type>jar</type>
+                                    <overWrite>true</overWrite>
+                                    <destFileName>graal-sdk.jar</destFileName>
+                                </artifactItem>
+                            </artifactItems>
+                            <outputDirectory>${project.build.directory}/lib</outputDirectory>
                         </configuration>
                     </execution>
                 </executions>
@@ -71,7 +118,7 @@
                             <deb>${project.build.directory}/phoenicis-playonlinux~${version}~ubuntu19.04.deb</deb>
                             <dataSet>
                                 <data>
-                                    <src>${basedir}/src/scripts/copyright</src>
+                                    <src>${basedir}/src/deb/copyright/copyright</src>
                                     <type>file</type>
                                     <mapper>
                                         <type>perm</type>
@@ -79,7 +126,7 @@
                                     </mapper>
                                 </data>
                                 <data>
-                                    <src>${basedir}/src/deb/scripts/phoenicis-javafx</src>
+                                    <src>${basedir}/src/deb/scripts/phoenicis</src>
                                     <type>file</type>
                                     <mapper>
                                         <type>perm</type>
@@ -88,7 +135,7 @@
                                     </mapper>
                                 </data>
                                 <data>
-                                    <src>${basedir}/src/deb/scripts/phoenicis-javafx.desktop</src>
+                                    <src>${basedir}/src/deb/scripts/phoenicis.desktop</src>
                                     <type>file</type>
                                     <mapper>
                                         <type>perm</type>
@@ -102,14 +149,6 @@
                                         <type>perm</type>
                                         <prefix>/usr/bin</prefix>
                                         <filemode>755</filemode>
-                                    </mapper>
-                                </data>
-                                <data>
-                                    <src>${basedir}/src/deb/scripts/phoenicis-cli.desktop</src>
-                                    <type>file</type>
-                                    <mapper>
-                                        <type>perm</type>
-                                        <prefix>/usr/share/applications</prefix>
                                     </mapper>
                                 </data>
                                 <data>

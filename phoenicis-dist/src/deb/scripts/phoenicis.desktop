@@ -1,8 +1,8 @@
 [Desktop Entry]
-Name=Phoenicis PlayOnLinux (CLI)
+Name=Phoenicis PlayOnLinux
 Type=Application
-Exec=phoenicis-cli
+Exec=phoenicis
 Icon=phoenicis
-Comment=Front-end for Wine
+Comment=Graphical front-end for Wine
 Categories=Game;Utility;
 StartupNotify=true
