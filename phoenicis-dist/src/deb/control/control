@@ -10,4 +10,4 @@ Description: This program is a front-end for wine.
              Copyright 2011-2019 PlayOnLinux team <contact@playonlinux.com>
 Maintainer: PlayOnLinux Packaging <packages@playonlinux.com>
 Homepage: https://www.phoenicis.org
-Depends: openjdk-12-jre, unzip, wget, xterm | x-terminal-emulator, python, imagemagick, cabextract, icoutils, p7zip-full, curl, winbind, libfreetype6, libfreetype6:i386
+Depends: openjdk-12-jre, unzip, wget, xterm | x-terminal-emulator, python, imagemagick, cabextract, icoutils, p7zip-full, curl, winbind, libc6:i386
